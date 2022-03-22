@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MarvelHero</string>
+    <string name="textview">TextView</string>
+    <string name="back">назад</string>
+    <string name="text">text</string>
+
+</resources>
