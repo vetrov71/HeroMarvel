@@ -55,27 +55,36 @@ class MainActivity : AppCompatActivity(), MyAdapter.ItemClickListener {
         })
     }
 
-    override fun onItemClick(position: Int) {
-        Toast.makeText(
-            this@MainActivity, "ты нажал на элемент ${position + 1}",
-            Toast.LENGTH_SHORT
-        ).show()
+    override fun onItemClick(marvel: Marvel) {
+        val bundle = Bundle()
+        bundle.putInt("Arg",1)
+        bundle.putString("Arg1",marvel.createdby)
+        bundle.putString("Arg2",marvel.publisher)
+        bundle.putString("Arg3",marvel.firstappearance)
+        bundle.putString("Arg4",marvel.bio)
+
+//        Toast.makeText(
+//            this@MainActivity, "ты нажал на элемент marvel",
+//            Toast.LENGTH_SHORT
+//        ).show()
         val dialog = CustomDialogFragment()
+        dialog.arguments = bundle
         dialog.show(supportFragmentManager,"marvel")
     }
-    override fun passData(position: Int, create: String, publ: String, fiApp: String, bio: String) {
+    override fun passData(position: Int, createdby: String, publisher: String,
+                          firstappearance: String, biography: String) {
         val bundle = Bundle()
-        bundle.putInt("position",position)
-        bundle.putString("create",create)
-        bundle.putString("publisher",publ)
-        bundle.putString("firstAppearance",fiApp)
-        bundle.putString("biography",bio)
+        bundle.putInt("Arg",position)
+        bundle.putString("Arg1",createdby)
+        bundle.putString("Arg2",publisher)
+        bundle.putString("Arg3",firstappearance)
+        bundle.putString("Arg4",biography)
 
-        val transaction = this.supportFragmentManager.beginTransaction()
-        val dialFrag = CustomDialogFragment()
-        dialFrag.arguments = bundle
-        transaction.replace(R.id.holderDialog,dialFrag)
-            .commit()
+//        val transaction = this.supportFragmentManager.beginTransaction()
+//        val dialFrag = CustomDialogFragment()
+//        dialFrag.arguments = bundle
+//        transaction.show(dialFrag)
+//            .commit()
     }
 
 }

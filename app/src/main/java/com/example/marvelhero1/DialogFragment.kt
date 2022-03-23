@@ -20,10 +20,10 @@ class CustomDialogFragment: DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DialogFragmentBinding.inflate(layoutInflater)
-        create = arguments?.getString("create").toString()
-        fiApp = arguments?.getString("firstAppearance").toString()
-        publ = arguments?.getString("publisher").toString()
-        bio = arguments?.getString("biography").toString()
+        create = arguments?.getString("Arg1","createdby").toString()
+        fiApp = arguments?.getString("Arg2","firstappearance").toString()
+        publ = arguments?.getString("Arg3","publisher").toString()
+        bio = arguments?.getString("Arg4","biography").toString()
         binding.butBack.setOnClickListener { dismiss() }
 
         binding.createText.text = create
