@@ -9,10 +9,10 @@ import com.example.marvelhero1.databinding.DialogFragmentBinding
 
 class CustomDialogFragment: DialogFragment() {
     private lateinit var binding: DialogFragmentBinding
-    private var create: String = ""
-    private var fiApp: String = ""
-    private var publ: String = ""
-    private var bio: String = ""
+    private var createdby: String = ""
+    private var firstApp: String = ""
+    private var publisher: String = ""
+    private var biography: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,16 +20,16 @@ class CustomDialogFragment: DialogFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DialogFragmentBinding.inflate(layoutInflater)
-        create = arguments?.getString("Arg1","createdby").toString()
-        fiApp = arguments?.getString("Arg2","firstappearance").toString()
-        publ = arguments?.getString("Arg3","publisher").toString()
-        bio = arguments?.getString("Arg4","biography").toString()
+        createdby = arguments?.getString("Arg1","createdby").toString()
+        firstApp = arguments?.getString("Arg2","firstappearance").toString()
+        publisher = arguments?.getString("Arg3","publisher").toString()
+        biography = arguments?.getString("Arg4","biography").toString()
         binding.butBack.setOnClickListener { dismiss() }
 
-        binding.createText.text = create
-        binding.textFiApp.text = fiApp
-        binding.textPubl.text = publ
-        binding.textBio.text = bio
+        binding.createText.text = createdby
+        binding.textFiApp.text = firstApp
+        binding.textPubl.text = publisher
+        binding.textBio.text = biography
         return binding.root
     }
 

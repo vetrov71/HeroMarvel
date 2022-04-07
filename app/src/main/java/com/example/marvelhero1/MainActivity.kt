@@ -1,7 +1,6 @@
 package com.example.marvelhero1
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvelhero1.databinding.ActivityMainBinding
@@ -63,28 +62,21 @@ class MainActivity : AppCompatActivity(), MyAdapter.ItemClickListener {
         bundle.putString("Arg3",marvel.firstappearance)
         bundle.putString("Arg4",marvel.bio)
 
-//        Toast.makeText(
-//            this@MainActivity, "ты нажал на элемент marvel",
-//            Toast.LENGTH_SHORT
-//        ).show()
+
         val dialog = CustomDialogFragment()
         dialog.arguments = bundle
         dialog.show(supportFragmentManager,"marvel")
     }
-    override fun passData(position: Int, createdby: String, publisher: String,
-                          firstappearance: String, biography: String) {
+    override fun passData(position: Int, create: String, publ: String,
+                          fiApp: String, bio: String) {
         val bundle = Bundle()
         bundle.putInt("Arg",position)
-        bundle.putString("Arg1",createdby)
-        bundle.putString("Arg2",publisher)
-        bundle.putString("Arg3",firstappearance)
-        bundle.putString("Arg4",biography)
+        bundle.putString("Arg1",create)
+        bundle.putString("Arg2",publ)
+        bundle.putString("Arg3",fiApp)
+        bundle.putString("Arg4",bio)
 
-//        val transaction = this.supportFragmentManager.beginTransaction()
-//        val dialFrag = CustomDialogFragment()
-//        dialFrag.arguments = bundle
-//        transaction.show(dialFrag)
-//            .commit()
+
     }
 
 }
