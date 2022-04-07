@@ -29,7 +29,7 @@
             android:layout_width="170dp"
             android:layout_height="170dp"
             android:padding="4dp"
-            tools:ignore="ImageContrastCheck"
+            tools:ignore="ContentDescription,ImageContrastCheck"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
@@ -53,9 +53,7 @@
             android:layout_gravity="center_vertical|end"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
-            android:gravity="center"
             android:text="@string/text"
-            android:textAlignment="textEnd"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -67,8 +65,6 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="@string/text"
-            android:textAlignment="textEnd" />
+            android:text="@string/text" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
