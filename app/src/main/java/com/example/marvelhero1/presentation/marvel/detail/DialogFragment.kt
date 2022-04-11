@@ -1,4 +1,4 @@
-package com.example.marvelhero1
+package com.example.marvelhero1.presentation.marvel
 
 import android.os.Bundle
 import android.view.LayoutInflater
